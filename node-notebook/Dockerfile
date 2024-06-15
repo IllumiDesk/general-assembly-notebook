@@ -28,7 +28,7 @@ RUN mkdir "${CONDA_DIR}/.npm-global" \
 RUN rm -Rf "${HOME}/.local/share/jupyter/kernels/tslab" \
   && mkdir -p "${CONDA_DIR}/share/jupyter/kernels/tslab"
 COPY --chown=${NB_UID}:${NB_GID} "setup-scripts/kernel-tslab.json" "${CONDA_DIR}/share/jupyter/kernels/tslab/kernel.json"
-    
+ 
 # update permissions as root
 USER root
 RUN fix-permissions /etc/jupyter/ \
